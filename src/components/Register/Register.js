@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import url from '../../const'
+
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +25,7 @@ class Register extends Component {
     }
 
     onSubmit = () => {
-        fetch('http://localhost:3001/register', {
+        fetch(`${url}/register`, {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

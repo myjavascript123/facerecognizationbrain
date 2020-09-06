@@ -10,6 +10,7 @@ import Rank from './components/Rank/Rank'
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
 import SignIn from './components/SignIn/SignIn'
 import Register from './components/Register/Register'
+import url from './const'
 
 
 
@@ -97,7 +98,7 @@ class App extends Component {
 
     // "https://samples.clarifai.com/face-det.jpg"
 
-    fetch('http://localhost:3001/imageurl', {
+    fetch(`${url}/imageurl`, {
           method: 'post',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -107,7 +108,7 @@ class App extends Component {
         .then( res => res.json() )
         .then( response => {
           console.log(response)
-          fetch('http://localhost:3001/image', {
+          fetch(`${url}/image`, {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

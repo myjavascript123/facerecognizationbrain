@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 
+import url from '../../const'
+
 class SignIn extends Component {
     constructor(props) {
         super(props);
@@ -18,7 +20,7 @@ class SignIn extends Component {
     }
 
     onSignIn = (event) => {
-        fetch('http://localhost:3001/signin', {
+        fetch(`${url}/signin`, {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
